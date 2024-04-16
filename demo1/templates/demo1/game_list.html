@@ -1,0 +1,28 @@
+{% extends 'demo1/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Reviews</title>
+    <link rel="stylesheet" href="{% static 'demo1/styles.css' %}">
+</head>
+<body>
+    <h1>Game Library</h1>
+    <ul>
+        {% for game in games %}
+            <li>
+                <strong>Title:</strong> {{ game.title }}<br>
+                <strong>Genre:</strong> {{ game.genre }}<br>
+                <strong>Release Date:</strong> {{ game.release_date }}<br>
+                <strong>Rating:</strong> {{ game.rating }}<br>
+                {% if game.review %}
+                    <strong>Review:</strong> {{ game.review }}
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No games in the library.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

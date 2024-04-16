@@ -1,0 +1,33 @@
+{% extends 'demo1/base.html' %}
+{% block content %}
+{% block body_class %}profile-page{% endblock %}
+
+<div class="profile-container">
+    <div class="profile-header">
+        {% if user.profile.profile_picture %}
+            <img src="{{ user.profile.profile_picture.url }}" alt="Profile picture" class="profile-picture">
+        {% else %}
+            <img src="{{ MEDIA_URL }}default.jpg" alt="Default profile picture" class="profile-picture">
+        {% endif %}
+        <h1>{{ user.username }}'s Profile</h1>
+        <!-- Check if the logged-in user is viewing their own profile -->
+        {% if request.user == user %}
+            <!-- Link to edit profile page -->
+            <a href="{% url 'edit_profile' %}" class="btn edit-profile-btn">Edit Profile</a>
+        {% endif %}
+    </div>
+
+    <p class="bio">{{ user.profile.bio }}</p>
+    <h2>Posts:</h2>
+    <div class="user-posts">
+        {% for post in posts %}
+        <div class="post-card">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.body }}</p>
+        </div>
+        {% empty %}
+        <p>No posts yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

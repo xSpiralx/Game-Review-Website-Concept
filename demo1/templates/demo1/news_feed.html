@@ -1,0 +1,25 @@
+{% extends 'demo1/base.html' %}
+
+{% block content %}
+<h2>News Feed</h2>
+<div class="posts">
+    {% for post in posts %}
+    <div class="post-card">
+        <div class="post-header">
+            {% if post.author.profile.profile_picture %}
+                <img src="{{ post.author.profile.profile_picture.url }}" alt="{{ post.author.username }}" class="profile-picture">
+            {% else %}
+                <img src="{{ MEDIA_URL }}default.jpg" alt="Default profile picture" class="profile-picture">
+            {% endif %}
+            <div class="post-user-details">
+                <strong>{{ post.author.username }}</strong>
+                <small>{{ post.created_at|date:"F d, Y H:i" }}</small>
+            </div>
+        </div>
+        <p class="post-body">{{ post.body }}</p>
+    </div>
+    {% empty %}
+    <p>No posts yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

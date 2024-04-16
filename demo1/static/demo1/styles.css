@@ -1,0 +1,202 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: crimson;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #2f2f2f;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+strong {
+    color: #8899A6;
+}
+
+.posts {
+    margin-bottom: 20px;
+}
+
+.post {
+    margin-bottom: 20px;
+    /* Additional styles for each post */
+}
+
+
+.navbar {
+    position: fixed; /* Makes the navbar float and stay visible on scroll */
+    top: 0; /* Aligns the navbar at the top of the viewport */
+    left: 0; /* Aligns the navbar to the left of the viewport */
+    width: 100%; /* Ensures the navbar spans the full width of the viewport */
+    background-color: transparent; /* Makes the navbar background transparent */
+    border-bottom: 1px solid transparent; /* Makes the border transparent by default */
+    padding: 10px 0; /* Adds some vertical padding for aesthetics */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    text-align: center; /* Centers the navbar links */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for background and border */
+}
+
+.navbar:hover {
+    background-color: #f9f9f9; /* Light background for the navbar on hover */
+    border-bottom: 1px solid #ccc; /* Adds a slight border for visual separation on hover */
+}
+
+.navbar a {
+    display: inline-block; /* Displays links inline but allows margin and padding */
+    margin: 0 15px; /* Adds some horizontal spacing between links */
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Dark color for text for better readability */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Optional: Add a hover effect to links */
+.navbar a:hover {
+    color: #017bff; /* Changes text color on hover */
+}
+
+.edit-profile-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.edit-profile-form fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.edit-profile-form legend {
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+.edit-profile-form .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.edit-profile-form .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.edit-profile-form .btn-primary:hover,
+.edit-profile-form .btn-secondary:hover {
+    opacity: 0.9;
+}
+
+.post-card {
+    background-color: #2f2f2f; /* Keep your color scheme */
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-picture {
+    width: 50px; /* Adjusted for visibility */
+    height: 50px; /* Adjusted for visibility */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #fff; /* Highlight the image */
+}
+
+.post-user-details {
+    flex-grow: 1;
+}
+
+.post-user-details strong {
+    color: #8899A6; /* Keeping your color for username */
+    margin-right: 10px;
+}
+
+.post-user-details small {
+    font-size: 0.8em;
+    color: #aaa; /* Lighter text for date and time */
+}
+
+.post-body {
+    color: #FFFFFF; /* Keeping your text color */
+    margin-top: 10px;
+}
+
+.profile-container {
+    text-align: center;
+    margin: auto;
+    max-width: 800px; /* Adjust width as needed */
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-page .profile-picture {
+    width: 236px;
+    height: 236px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #fff; /* Highlight the image */
+}
+
+.edit-profile-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #9c9c9c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.edit-profile-btn:hover {
+    background-color: #0056b3;
+}
+
+.bio {
+    margin-bottom: 40px;
+    color: #FFF; /* Your text color */
+}
+
+.profile-page .user-posts .post-card {
+    background-color: #2f2f2f; /* Post background color */
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    color: #FFF; /* Your text color */
+}
+
+h1, h2, h3, p {
+    color: #FFF; /* Ensure text color consistency */
+}

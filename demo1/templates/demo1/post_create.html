@@ -1,0 +1,13 @@
+
+DO NOT USE
+
+{% extends 'demo1/base.html' %}
+
+{% block content %}
+<h2>Create New Post</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post????</button>
+</form>
+{% endblock %}

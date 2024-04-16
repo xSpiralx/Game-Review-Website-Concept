@@ -1,0 +1,20 @@
+{% extends 'demo1/base.html' %}
+{% block content %}
+<div class="edit-profile-container">
+    <h1>Edit Profile</h1>
+    <form method="POST" enctype="multipart/form-data" class="edit-profile-form">
+        {% csrf_token %}
+        <fieldset>
+            <legend>User Information</legend>
+            {{ u_form.as_p }}
+        </fieldset>
+        <fieldset>
+            <legend>Profile Information</legend>
+            {{ p_form.as_p }}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{% url 'profile' username=request.user.username %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+

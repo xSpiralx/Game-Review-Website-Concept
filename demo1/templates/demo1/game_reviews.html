@@ -1,0 +1,22 @@
+{% extends 'demo1/base.html' %}
+
+{% block content %}
+<h2>Game Reviews</h2>
+<ul>
+    {% for review in reviews %}
+    <li>
+        <strong>Game:</strong> {{ review.game_name }} ({{ review.genre }} on {{ review.platform }})<br>
+        <strong>Hours Played:</strong> {{ review.hours_played }}<br>
+        <strong>Rating:</strong> {{ review.rating }}/10<br>
+        <strong>Review:</strong> {{ review.review }}<br>
+        <strong>Overall:</strong> {{ review.thumbs_up|yesno:"Thumbs Up,Thumbs Down" }}<br>
+        {% if request.user == review.user %}
+        <a href="{% url 'delete_game_review' review.id %}">Delete</a>
+        {% endif %}
+    </li>
+    {% empty %}
+    <li>No reviews yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_game_review' %}">Add a Game Review</a>
+{% endblock %}
